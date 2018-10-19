@@ -1,6 +1,6 @@
 //Don't forget includes!!!!!
-
-
+#include "dive_log.h"
+#include <iostream>
 /*
 Create an instance of DiveLog class.
 Add three dive classes to the DiveLog class:
@@ -27,5 +27,19 @@ Output The DiveLog get_avg_sacr to screen. (should return 23)
 */
 int main() 
 {
+	dive_log trip;
+	dive scuba(55, 3000, 1000, 30);
+	std::cout << "Trip 1:  " << scuba.get_sacr() << std::endl;
+	trip.add_dive(scuba);
+	dive scuba2(67, 3000, 1000, 30);
+	std::cout << "Trip 2:  " << scuba2.get_sacr() << std::endl;
+	trip.add_dive(scuba2);
+	dive scuba3(67, 3000, 1000, 30);
+	std::cout << "Trip 3:  " << scuba3.get_sacr() << std::endl;
+	trip.add_dive(scuba3);
+	std::cout << "Average: " << trip.get_avg_sacr() << std::endl;
+
+	system("pause");
+
 	return 0;
 }

@@ -1,10 +1,23 @@
 #include "evaluation.h"
+#include <iostream>
 //SAMPLE FUNCTION code
 int sum_numbers(int num1, int num2) 
 {
 	return num1 + num2;
 }
 
+void faculty_evaluation(int responses, int alw, int voft, int oft, std::string& result) {
+	double AlwRank = alw * 100 / responses; //std::cout << "AlwRank is: " << AlwRank << std::endl; 
+	double VofRank = voft * 100 / responses; //std::cout << "VofRank is: " << VofRank << std::endl;
+	double OftRank = oft* 100 / responses; //std::cout << "OftRank is: " << OftRank << std::endl;
+	double FinCheck = AlwRank + VofRank; //std::cout << "FinCheck is: " << OftRank << std::endl;
+
+	if (FinCheck >= 90) {
+		result = "Excellent";
+	}else if (FinCheck >= 80) {
+		result = "Good";
+	}else { result = "Needs Improvement"; }
+}
 
 /*
 POINTS FOR THIS QUESTION: 10

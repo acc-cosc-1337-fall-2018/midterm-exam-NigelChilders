@@ -1,6 +1,20 @@
 #ifndef DIVE_H
 #define DIVE_H
+class dive {
+public:
+	dive() = default;
+	dive(int d, int s, int f, int t) : depth(d), start_p(s), final_p(f), time(t) {};
+	int get_sacr();
 
+private:
+	int depth{ 0 };
+	int start_p{ 0 };
+	int final_p{ 0 };
+	int time{ 0 };
+
+protected:
+
+};
 /*
 POINTS FOR THIS QUESTION: 25
 

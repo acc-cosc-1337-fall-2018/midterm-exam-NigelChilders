@@ -3,13 +3,13 @@
 #include "evaluation.h"
 #include "factorial.h"
 #include "dive_log.h"
+#include <string>
 
 /*
 DON'T ADD OR MODIFY THIS TEST CASE
 IT'S SIMPLY TO TEST PROJECT TEST CASE CONFIGURATION
 */
-TEST_CASE("Test project configuration") 
-{
+TEST_CASE("Test project configuration") {
 	REQUIRE(sum_numbers(2, 2) == 4);
 	REQUIRE(multiply_numbers(3, 3) == 9);
 }
@@ -24,9 +24,10 @@ oft = 4
 The reference string parameter result should have a string value of Excellent.
 
 */
-TEST_CASE("Question 1: Evaluation test cases") 
-{
-
+TEST_CASE("Question 1: Evaluation test cases") {
+	std::string Result{ "" };
+	faculty_evaluation(200, 188, 8, 4, Result);
+	REQUIRE(Result == "Excellent");
 }
 
 /*
@@ -34,10 +35,9 @@ Write two test cases for the factorial function with values 3 and 5.
 factorial(3) should result in   6 
 factorial(5) should result in 120
 */
-TEST_CASE("Question 2: Factorial function test") 
-{
-
-
+TEST_CASE("Question 2: Factorial function test") {
+	REQUIRE(factorialize(3) == 6);
+	REQUIRE(factorialize(5) == 120);
 }
 
 /*
@@ -53,7 +53,8 @@ The function get_sacr should return 25
 */
 TEST_CASE("Question 3: Dive class test cases") 
 {
-
+	dive scuba(55, 3000, 1000, 30);
+	REQUIRE(scuba.get_sacr() == 25);
 }
 
 /*
@@ -85,7 +86,15 @@ The DiveLog get_avg_sacr should return 23---CREATE A TEST CASE FOR THIS ONE
 */
 TEST_CASE("Question 4: DiveLog test case") 
 {
+	dive_log trip;
+	dive scuba(55, 3000, 1000, 30);
+	trip.add_dive(scuba);
+	dive scuba2(67, 3000, 1000, 30);
+	trip.add_dive(scuba2);
+	dive scuba3(67, 3000, 1000, 30);
+	trip.add_dive(scuba3);
 
+	REQUIRE(trip.get_avg_sacr() == 23);
 }
 
 //THERE ARE NO TEST CASES FOR QUESTION 5

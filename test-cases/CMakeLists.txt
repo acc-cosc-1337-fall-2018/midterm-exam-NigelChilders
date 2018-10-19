@@ -1,2 +1,2 @@
 add_executable(test_cases "test_cases.cpp")
-target_link_libraries(test_cases evaluation_library factorial_library dive_library)
+target_link_libraries(test_cases evaluation_library factorial_library dive_library dive_log_library)

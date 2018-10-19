@@ -5,6 +5,15 @@ int multiply_numbers(int num1, int num2)
 	return num1 * num2;
 }
 
+int factorialize(int value)
+{
+	int Factory{ 1 };
+	for (int i = value; i > 0; i--) {
+		Factory = Factory * i;
+	}
+	return Factory;
+}
+
 /*
 POINTS FOR THIS QUESTION: 10
 

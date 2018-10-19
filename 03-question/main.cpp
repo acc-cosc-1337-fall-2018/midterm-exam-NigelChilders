@@ -1,4 +1,5 @@
-//Don't forget includes!!!!!
+#include "dive.h"
+#include <iostream>
 
 /*
 Create an instance of Dive class.
@@ -12,5 +13,10 @@ Output the function get_sacr to screen (should return 25).
 */
 int main() 
 {
+	dive scuba(55,3000,1000,30);
+	std::cout << "SACR value is:  " << scuba.get_sacr() << std::endl;
+
+	system("pause");
+
 	return 0;
 }

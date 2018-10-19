@@ -1,7 +1,22 @@
 #ifndef DIVE_LOG_H
 #define DIVE_LOG_H
+#include <vector>
 #include "dive.h"
 
+using std::vector;
+
+class dive_log {
+public:
+	dive_log() = default;
+	dive_log(vector<dive> l) : log(l) {};
+	int get_avg_sacr();
+	void add_dive(dive d);
+private:
+	std::vector<dive> log;
+
+protected:
+
+};
 /*
 POINTS FOR THIS QUESTION: 25
 
