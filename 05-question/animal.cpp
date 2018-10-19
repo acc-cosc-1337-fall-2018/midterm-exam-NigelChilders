@@ -1,4 +1,3 @@
-#include "mammal.h"
 #include "animal.h"
 
 void animal::make_sound() const {
